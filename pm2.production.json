@@ -1,23 +1,18 @@
 {
 	"apps": [{
-		"name": "meteor-boilerplate",
-		"exec_mode": "cluster_mode",
-		"instances": "1",
+		"name": "rocket.chat.website",
+		"max_memory_restart": "1024M",
 		"log_date_format": "YYYY-MM-DD HH:mm Z",
-		"script": "bundle/main.js",
-		"out_file": "./logs/app.log",
-		"error_file": "./logs/err.log",
-		"port": "3000",
+		"script": "/var/www/rocket.chat.website/bundle/main.js",
+		"out_file": "/var/log/rocket.chat/app.log",
+		"error_file": "/var/log/rocket.chat/err.log",
+		"port": "8000",
 		"env": {
-			"MONGO_URL": "mongodb://001-db.konecty.com:27017/meteor-boilerplate",
-			"MONGO_OPLOG_URL": "mongodb://001-db.konecty.com:27017/local",
-			"ROOT_URL": "http://meteor-boilerplate",
-			"PORT": "3002",
-			"CDN_PREFIX": "//cdn-meteor-boilerplate",
-			"KONECTY_URL": "http://my.konecty.com:13000",
-			"KONECTY_UPLOAD_URL": "http://001-blob.konecty.com:8081",
-			"KONECTY_AUTH_TOKEN_ID": "5239aba8cbf1518a33f2ba92",
-			"KONECTY_MODE": "production"
+			"MONGO_URL": "mongodb://localhost:27017/rocketchatwebsite",
+			"MONGO_OPLOG_URL": "mongodb://localhost:27017/local",
+			"ROOT_URL": "https://rocket.chat",
+			"DDP_DEFAULT_CONNECTION_URL": "https://rocket.chat",
+			"PORT": "8000"
 		}
 	}]
 }
