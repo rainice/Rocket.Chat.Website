@@ -1,0 +1,20 @@
+{
+	"deploy": {
+		"production": {
+			"user": "root",
+			"host": "001-sites.konecty.com",
+			"ref": "origin/master",
+			"repo": "ssh://git@stash.konecty.com:7999/meteor-boilerpate/meteor-boilerplate.git",
+			"path": "/var/www/vhosts/meteor-boilerplate",
+			"post-deploy": "cd httpdocs && meteor build --directory ../ && cd ../bundle/programs/server/ && npm install && cd ../../.. && pm2 startOrRestart meteor-pm2.json"
+		},
+		"dev": {
+			"user": "root",
+			"host": "001-sites.konecty.com",
+			"ref": "origin/development",
+			"repo": "ssh://git@stash.konecty.com:7999/meteor-boilerpate/meteor-boilerplate.git",
+			"path": "/var/www/vhosts/dev-meteor-boilerplate",
+			"post-deploy": "cd httpdocs && meteor build --directory ../ && cd ../bundle/programs/server/ && npm install && cd ../../.. && pm2 startOrRestart meteor-pm2-dev.json"
+		}
+	}
+}
