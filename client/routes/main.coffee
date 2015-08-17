@@ -12,3 +12,9 @@ Router.route '/',
 	data: {}
 	action: ->
 		this.render 'index'
+
+Router.route '/privacy',
+	name: "privacy"
+	data: {}
+	action: ->
+		this.render 'privacy'
